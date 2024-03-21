@@ -1,12 +1,4 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  CreatedAt,
-  UpdatedAt,
-  ForeignKey
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, CreatedAt, UpdatedAt, ForeignKey } from 'sequelize-typescript';
 import { Optional } from 'sequelize';
 import { ICommentReply } from '../types/modelInterface.types';
 import { User } from './User';
@@ -16,13 +8,10 @@ type ICommentReplyAttributes = Optional<ICommentReply, 'replyId'>;
 
 @Table({
   timestamps: true,
-  tableName: 'commentReplys',
-  modelName: 'CommentReply'
+  tableName: 'replies',
+  modelName: 'Reply'
 })
-export class CommentReply extends Model<
-  ICommentReply,
-  ICommentReplyAttributes
-> {
+export class Reply extends Model<ICommentReply, ICommentReplyAttributes> {
   @Column({
     type: DataType.UUID,
     defaultValue: DataType.UUIDV4,

@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  ForeignKey
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, ForeignKey } from 'sequelize-typescript';
 import { Optional } from 'sequelize';
 import { IAttachment } from '../types/modelInterface.types';
 import { Task } from './Task';

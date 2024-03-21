@@ -1,18 +1,9 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  CreatedAt,
-  UpdatedAt,
-  ForeignKey,
-  HasMany
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, CreatedAt, UpdatedAt, ForeignKey, HasMany } from 'sequelize-typescript';
 import { Optional } from 'sequelize';
 import { IComment } from '../types/modelInterface.types';
 import { Task } from './Task';
 import { User } from './User';
-import { CommentReply } from './CommentReply';
+import { Reply } from './Reply';
 
 type ICommentAttributes = Optional<IComment, 'commentId'>;
 
@@ -55,8 +46,8 @@ export class Comment extends Model<IComment, ICommentAttributes> {
   @UpdatedAt
   declare updatedAt?: Date;
 
-  @HasMany(() => CommentReply, {
+  @HasMany(() => Reply, {
     onDelete: 'CASCADE'
   })
-  declare commentReplies: CommentReply[];
+  declare replies: Reply[];
 }

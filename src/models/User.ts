@@ -1,17 +1,9 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  CreatedAt,
-  UpdatedAt,
-  HasMany
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, CreatedAt, UpdatedAt, HasMany } from 'sequelize-typescript';
 import { Optional } from 'sequelize';
 import { IUser } from '../types/modelInterface.types';
 import { Task } from './Task';
 import { Comment } from './Comment';
-import { CommentReply } from './CommentReply';
+import { Reply } from './Reply';
 import { Attachment } from './Attachment';
 
 type IUserAttributes = Optional<IUser, 'userId'>;
@@ -69,10 +61,10 @@ export class User extends Model<IUser, IUserAttributes> {
   })
   declare comments: Comment[];
 
-  @HasMany(() => CommentReply, {
+  @HasMany(() => Reply, {
     onDelete: 'CASCADE'
   })
-  declare commentReplies: CommentReply[];
+  declare replies: Reply[];
 
   @HasMany(() => Attachment, {
     onDelete: 'CASCADE'

@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  ForeignKey
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, ForeignKey } from 'sequelize-typescript';
 import { Task } from './Task';
 import { Tag } from './Tag';
 

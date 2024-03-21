@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  DataType,
-  Model,
-  BelongsToMany
-} from 'sequelize-typescript';
+import { Table, Column, DataType, Model, BelongsToMany } from 'sequelize-typescript';
 import { Optional } from 'sequelize';
 import { ITag } from '../types/modelInterface.types';
 import { TaskTag } from './TaskTag';
